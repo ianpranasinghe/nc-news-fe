@@ -381,12 +381,13 @@ a {
     display: block;
     float: none;
     text-align: center;
-    margin: 0.5% auto;
+    margin: 2.5% auto;
     width: 90%;
   }
 
   #articleListItemContainer {
     width: 90vw;
+    height: 223px;
   }
 
   #sortByContainer {
@@ -395,5 +396,21 @@ a {
 
   #signIncontainer {
     width: 60vw;
+  }
+
+  #article {
+    width: 85vw;
+  }
+  #comments {
+    width: 85vw;
+  }
+
+  #comment {
+    text-align: left;
+    width: 77vw;
+  }
+
+  #comment #votesContainer {
+    float: none;
   }
 }
