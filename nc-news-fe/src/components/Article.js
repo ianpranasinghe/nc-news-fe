@@ -4,6 +4,7 @@ import Comments from "./Comments";
 import Votes from "./Votes";
 import AddComment from "./AddComment";
 import NotFound from "./NotFound";
+import Loading from "./Loading";
 
 class Article extends Component {
   state = {
@@ -46,7 +47,7 @@ class Article extends Component {
   };
 
   render() {
-    if (this.state.isLoading) return <p>loading</p>;
+    if (this.state.isLoading) return <Loading />;
     if (this.state.err) return <NotFound errData={this.state.err} default />;
     const {
       article_id,

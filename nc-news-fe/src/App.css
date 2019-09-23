@@ -414,3 +414,38 @@ a {
     float: none;
   }
 }
+#loadingContainer {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9%;
+}
+
+#loadingContainer svg {
+  width: 72px;
+  height: 72px;
+}
+
+#LoadingCircle {
+  -webkit-animation: rotation 2s infinite linear;
+  transform-origin: 50% 50%;
+}
+
+@-moz-keyframes rotation {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotation {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

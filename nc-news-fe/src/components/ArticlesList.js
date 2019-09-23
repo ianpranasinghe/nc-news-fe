@@ -4,6 +4,7 @@ import { Link } from "@reach/router";
 import Votes from "./Votes";
 import SortBy from "./SortBy";
 import NotFound from "./NotFound";
+import Loading from "./Loading";
 
 class ArticlesList extends Component {
   state = {
@@ -51,7 +52,7 @@ class ArticlesList extends Component {
 
   render() {
     const { articles, err } = this.state;
-    if (this.props.isLoading) return <p>loading</p>;
+    if (this.state.isLoading) return <Loading />;
     if (err) return <NotFound errData={this.state.err} default />;
 
     return (
