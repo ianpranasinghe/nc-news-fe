@@ -373,6 +373,41 @@ a {
   font-size: 1.5em;
   line-height: 1.7em;
 }
+#loadingContainer {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9%;
+}
+
+#loadingContainer svg {
+  width: 72px;
+  height: 72px;
+}
+
+#LoadingCircle {
+  -webkit-animation: rotation 2s infinite linear;
+  transform-origin: 50% 50%;
+}
+
+@-moz-keyframes rotation {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotation {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 
 @media only screen and (max-width: 67.5em) {
   /* CSS rules here */
@@ -413,39 +448,17 @@ a {
   #comment #votesContainer {
     float: none;
   }
-}
-#loadingContainer {
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 9%;
-}
-
-#loadingContainer svg {
-  width: 72px;
-  height: 72px;
-}
-
-#LoadingCircle {
-  -webkit-animation: rotation 2s infinite linear;
-  transform-origin: 50% 50%;
-}
-
-@-moz-keyframes rotation {
-  100% {
-    -moz-transform: rotate(360deg);
+  #article .title {
+    width: 70vw;
+    margin: 0vh auto 2vh auto;
   }
-}
-@-webkit-keyframes rotation {
-  100% {
-    -webkit-transform: rotate(360deg);
+
+  #votesContainer {
+    height: 19vh;
+    width: 10%;
   }
-}
-@keyframes rotation {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+
+  #idInfoContainer {
+    width: 80%;
   }
 }

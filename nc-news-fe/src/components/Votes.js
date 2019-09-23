@@ -5,22 +5,23 @@ class Votes extends Component {
   state = {
     voteValue: null,
     hasVoted: false,
-    votes: this.props.votes
+    votes: null
   };
+
+  componentDidMount() {
+    const { votes } = this.props;
+    this.setState({ votes: votes });
+  }
 
   articlesVoting = () => {
     const { hasVoted, voteValue, votes } = this.state;
     const { article_id } = this.props;
     if (!hasVoted) {
       api.articleVote(article_id, voteValue).then(() => {
-        this.setState(
-          currentState => {
-            return (currentState.votes += currentState.voteValue);
-          },
-          () => {
-            this.setState({ hasVoted: true });
-          }
-        );
+        const newVoteValue = votes + voteValue;
+        this.setState({ votes: newVoteValue }, () => {
+          this.setState({ hasVoted: true });
+        });
       });
     }
   };

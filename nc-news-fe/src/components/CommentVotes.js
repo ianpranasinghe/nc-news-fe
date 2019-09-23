@@ -5,22 +5,23 @@ class CommentVotes extends Component {
   state = {
     voteValue: null,
     hasVoted: false,
-    votes: this.props.votes
+    votes: null
   };
 
+  componentDidMount() {
+    const { votes } = this.props;
+    this.setState({ votes: votes });
+  }
+
   articlesVoting = () => {
-    const { hasVoted, voteValue } = this.state;
+    const { hasVoted, voteValue, votes } = this.state;
     const { comment_id } = this.props;
     if (!hasVoted) {
       api.commentVote(comment_id, voteValue).then(() => {
-        this.setState(
-          currentState => {
-            return (currentState.votes += currentState.voteValue);
-          },
-          () => {
-            this.setState({ hasVoted: true });
-          }
-        );
+        const newVoteValue = votes + voteValue;
+        this.setState({ votes: newVoteValue }, () => {
+          this.setState({ hasVoted: true });
+        });
       });
     }
   };
@@ -43,7 +44,7 @@ class CommentVotes extends Component {
           }}
           class="fas fa-arrow-circle-up"
         ></i>
-        <h4>{this.props.votes + this.state.voteValue}</h4>
+        <h4>{votes}</h4>
         <p>votes</p>
         <i
           id="-1"

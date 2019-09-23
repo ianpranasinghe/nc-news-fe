@@ -39,7 +39,6 @@ class Comments extends Component {
     if (this.state.commentsLoading) return <p>loading</p>;
 
     const { comments, user } = this.state;
-    console.log(comments, "comment");
 
     return (
       <div id="comments">
