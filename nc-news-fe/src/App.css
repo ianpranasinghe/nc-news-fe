@@ -72,7 +72,7 @@ a {
 
 #signIncontainer button {
   width: 54px;
-  height: 15px;
+  height: 19px;
   border: none;
   background-color: #ba1f31;
   color: white;
@@ -138,19 +138,74 @@ a {
 /******* comment *******/
 
 #comment {
-  border: 1px solid black;
-  width: 60vw;
+  text-align: left;
+  width: 55vw;
+  padding: 2%;
   display: inline-block;
   height: auto;
+  border-radius: 10px;
+  margin: 1%;
+  transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 4px 10px 19px -6px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 4px 10px 19px -6px rgba(173, 173, 173, 1);
+  box-shadow: 4px 10px 19px -6px rgba(173, 173, 173, 1);
+}
+
+#comment:hover {
+  -webkit-box-shadow: 4px 10px 19px -5px rgba(125, 125, 125, 1);
+  -moz-box-shadow: 4px 10px 19px -5px rgba(125, 125, 125, 1);
+  box-shadow: 4px 10px 19px -5px rgba(125, 125, 125, 1);
+}
+#comment .body {
+  font-family: "Lora", serif;
+  font-size: 1em;
+  width: 80%;
+  margin-top: 0;
+  display: inline-block;
+}
+
+#comment .date {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#comment h4 {
+  display: inline-block;
+  margin-bottom: 1%;
+  color: #666;
 }
 
 #comments {
-  border: 1px solid black;
   width: 60vw;
   display: inline-block;
   height: auto;
 }
 
+#commentsContainer {
+  text-align: center;
+}
+
+#commentsContainer textarea {
+  width: 50vw;
+  margin: 1vh auto;
+  height: 21vh;
+}
+
+#commentsContainer input {
+  display: block;
+  margin: 3vh auto;
+}
+
+#deleteButtonContainer {
+  text-align: center;
+  margin: 1%;
+  text-align: center;
+}
+
+#addCommentContainer {
+  width: 60vw;
+  margin: 2vh auto;
+}
 /******* sortyby *******/
 #sortByContainer {
   width: 93vw;
@@ -221,11 +276,22 @@ a {
 /******* Articles List *******/
 
 #articleListItemContainer {
+  margin: 2% auto;
   text-align: left;
-  margin: 2%;
   height: 160px;
+  width: 60vw;
   padding: 1% 2%;
-  border: 1px solid silver;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  -webkit-box-shadow: 4px 10px 19px -6px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 4px 10px 19px -6px rgba(173, 173, 173, 1);
+  box-shadow: 4px 10px 19px -6px rgba(173, 173, 173, 1);
+}
+
+#articleListItemContainer:hover {
+  -webkit-box-shadow: 4px 10px 19px -5px rgba(125, 125, 125, 1);
+  -moz-box-shadow: 4px 10px 19px -5px rgba(125, 125, 125, 1);
+  box-shadow: 4px 10px 19px -5px rgba(125, 125, 125, 1);
 }
 
 #articleListItemContainer a {
@@ -237,13 +303,12 @@ a {
   float: left;
   height: -webkit-fill-available;
   width: 7%;
-  padding: 5% 2% 5% 2%;
-  border: 1px solid silver;
+  padding: 3% 2% 3% 2%;
 }
 
 #votesContainer i {
-  margin: 5%;
-
+  margin: 15%;
+  color: red;
   font-size: 1em;
 }
 
@@ -251,16 +316,55 @@ a {
   cursor: pointer;
 }
 #votesContainer h4 {
-  margin: 0.5%;
+  font-size: 1.5em;
+  margin: 11.5%;
+  color: orange;
 }
 #votesContainer p {
   margin: 0.5%;
+  font-size: 12px;
 }
 
 #idInfoContainer {
-  border: 1px solid silver;
   display: inline-block;
   margin-left: 2%;
   height: -webkit-fill-available;
-  width: 86%;
+  padding: 1%;
+  width: 84%;
+  color: #1f2728;
+}
+
+#idInfoContainer h4 {
+  margin-top: 11px;
+  margin-bottom: 0px;
+  font-size: 1.2em;
+}
+
+.author {
+  margin: 0px;
+  font-size: 0.8em;
+  color: silver;
+}
+
+.date {
+  color: #aaaba3;
+  font-size: 0.95em;
+}
+
+#article {
+  width: 60vw;
+  margin: 5vh auto;
+}
+
+#article .title {
+  font-weight: 400;
+  font-size: 2em;
+  margin: 6vh auto 2vh auto;
+  display: inline-block;
+}
+
+#article .body {
+  font-family: "Lora", serif;
+  display: inline-block;
+  font-size: 1.5em;
 }

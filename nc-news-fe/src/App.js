@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Topics from "./components/Topics";
 import Article from "./components/Article";
 import Popup from "./components/Popup";
+import NotFound from "./components/NotFound";
 
 class App extends React.Component {
   state = {
@@ -14,8 +15,11 @@ class App extends React.Component {
     showPopup: false,
     users: [],
     user: null,
-    userAvatar: ""
+    userAvatar: "",
+    err: "",
+    isLoading: true
   };
+
   componentDidMount() {
     this.fetchUsers();
   }
@@ -25,9 +29,16 @@ class App extends React.Component {
   };
 
   fetchUsers = () => {
-    api.getUsers().then(data => {
-      this.setState({ users: data });
-    });
+    api
+      .getUsers()
+      .then(data => {
+        this.setState({ users: data });
+      })
+      .catch(({ response }) => {
+        const { status } = response;
+        const { msg } = response.data;
+        this.setState({ isLoading: false, err: { status, msg } });
+      });
   };
 
   chooseUser = user => {
@@ -56,8 +67,17 @@ class App extends React.Component {
         <Router>
           <Home path="/" />
           <Topics path="topics/:topic" />
-          <Article path="topics/:topic/:article_id" user={this.state.user} />
-          <Article path="/:article_id" user={this.state.user} />
+          <Article
+            path="topics/:topic/:article_id"
+            user={this.state.user}
+            isLoading={this.state.isLoading}
+          />
+          <Article
+            path="/:article_id"
+            user={this.state.user}
+            isLoading={this.state.isLoading}
+          />
+          <NotFound errData={this.state.err} default />
         </Router>
         {this.state.showPopup ? (
           <Popup
