@@ -173,6 +173,7 @@ a {
   display: inline-block;
   margin-bottom: 1%;
   color: #666;
+  width: 40%;
 }
 
 #comments {
@@ -310,6 +311,7 @@ a {
   margin: 15%;
   color: red;
   font-size: 1em;
+  display: block;
 }
 
 #votesContainer i:hover {
@@ -319,10 +321,12 @@ a {
   font-size: 1.5em;
   margin: 11.5%;
   color: orange;
+  display: block;
 }
 #votesContainer p {
   margin: 0.5%;
   font-size: 12px;
+  display: block;
 }
 
 #idInfoContainer {
@@ -368,4 +372,28 @@ a {
   display: inline-block;
   font-size: 1.5em;
   line-height: 1.7em;
+}
+
+@media only screen and (max-width: 67.5em) {
+  /* CSS rules here */
+  #sortByContainer #left,
+  #sortByContainer #right {
+    display: block;
+    float: none;
+    text-align: center;
+    margin: 0.5% auto;
+    width: 90%;
+  }
+
+  #articleListItemContainer {
+    width: 90vw;
+  }
+
+  #sortByContainer {
+    height: 12vh;
+  }
+
+  #signIncontainer {
+    width: 60vw;
+  }
 }
