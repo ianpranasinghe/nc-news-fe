@@ -5,7 +5,8 @@ class Votes extends Component {
   state = {
     voteValue: null,
     hasVoted: false,
-    votes: null
+    votes: null,
+    color: "red"
   };
 
   componentDidMount() {
@@ -15,26 +16,32 @@ class Votes extends Component {
 
   articlesVoting = () => {
     const { hasVoted, voteValue, votes } = this.state;
-    const { id } = this.props;
+    const { comment_id, article_id } = this.props;
 
-    if (!hasVoted) {
-      api.articleVote(id, voteValue).then(() => {
+    if (comment_id) {
+      if (!hasVoted) {
         const newVoteValue = votes + voteValue;
-        this.setState({ votes: newVoteValue }, () => {
-          this.setState({ hasVoted: true });
-        });
-      });
+        this.setState({ votes: newVoteValue, hasVoted: true });
+        api.commentVote(comment_id, voteValue);
+      }
+    } else if (article_id) {
+      if (!hasVoted) {
+        const newVoteValue = votes + voteValue;
+        this.setState({ votes: newVoteValue, hasVoted: true });
+        api.articleVote(article_id, voteValue);
+      }
     }
   };
 
   vote = value => {
-    this.setState({ voteValue: value }, () => {
+    this.setState({ voteValue: value, color: "darkgray" }, () => {
       this.articlesVoting();
     });
   };
 
   render() {
     const { votes } = this.state;
+
     return (
       <div id="votesContainer">
         <i
@@ -42,7 +49,8 @@ class Votes extends Component {
           onClick={() => {
             this.vote(1);
           }}
-          class="fas fa-arrow-circle-up"
+          className="fas fa-arrow-circle-up"
+          style={{ color: this.state.color }}
         ></i>
         <h4>{votes}</h4>
         <p>votes</p>
@@ -51,7 +59,8 @@ class Votes extends Component {
           onClick={() => {
             this.vote(-1);
           }}
-          class="fas fa-arrow-circle-down"
+          className="fas fa-arrow-circle-down"
+          style={{ color: this.state.color }}
         ></i>
       </div>
     );

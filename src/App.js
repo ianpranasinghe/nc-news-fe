@@ -44,10 +44,11 @@ class App extends React.Component {
   chooseUser = user => {
     this.setState({ user: user });
     const { users } = this.state;
-    users.map(person => {
+    users.filter(person => {
       if (person.username === user) {
         this.setState({ userAvatar: person.avatar_url });
       }
+      return null;
     });
   };
 

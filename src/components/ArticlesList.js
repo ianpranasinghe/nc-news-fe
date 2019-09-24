@@ -70,14 +70,14 @@ class ArticlesList extends Component {
           } = article;
           return (
             <div key={article_id} id="articleListItemContainer">
-              <Votes votes={votes} id={article_id} />
+              <Votes votes={votes} article_id={article_id} />
               <Link key={`linkTo${article_id}`} to={`${article_id}`}>
                 <div id="idInfoContainer">
                   <h4>{title}</h4>
-                  <p class="author"> Posted by {author}</p>
+                  <p className="author"> Posted by {author}</p>
 
                   <p>{comment_count} comments</p>
-                  <p class="date">
+                  <p className="date">
                     Submitted on {new Date(created_at).toUTCString()} to {topic}
                   </p>
                 </div>

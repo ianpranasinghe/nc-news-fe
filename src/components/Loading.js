@@ -36,8 +36,8 @@ class Loading extends Component {
                 <path
                   fill="none"
                   stroke="#B7B7B7"
-                  stroke-width="0.8714"
-                  stroke-miterlimit="10"
+                  strokeWidth="0.8714"
+                  strokeMiterlimit="10"
                   d="M35.871,0.664
 				c19.021,0.178,34.382,15.646,34.382,34.714c0,19.17-15.54,34.715-34.714,34.715c-19.175,0-34.719-15.544-34.719-34.715
 				c0-5.716,1.382-11.108,3.829-15.864"
@@ -45,8 +45,8 @@ class Loading extends Component {
                 <path
                   fill="none"
                   stroke="#B7B7B7"
-                  stroke-width="0.8085"
-                  stroke-miterlimit="10"
+                  strokeWidth="0.8085"
+                  strokeMiterlimit="10"
                   d="M35.871,3.126
 				C53.474,3.345,67.669,17.678,67.669,35.33c0,17.789-14.418,32.211-32.207,32.211c-17.793,0-32.211-14.422-32.211-32.211
 				c0-5.295,1.28-10.294,3.544-14.702"
@@ -54,8 +54,8 @@ class Loading extends Component {
                 <path
                   fill="none"
                   stroke="#9494F7"
-                  stroke-width="0.8714"
-                  stroke-miterlimit="10"
+                  strokeWidth="0.8714"
+                  strokeMiterlimit="10"
                   d="M4.645,19.501
 				c0.421-0.806,0.81-1.665,1.251-2.455C11.933,6.315,23.527,0.473,35.871,0.659"
                 />

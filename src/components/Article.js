@@ -55,7 +55,6 @@ class Article extends Component {
       body,
       created_at,
       title,
-      topic,
       votes
     } = this.state.article;
 
@@ -63,10 +62,10 @@ class Article extends Component {
       <>
         <div id="article">
           <Votes votes={votes} article_id={article_id} />
-          <p class="title">{title}</p>
-          <p class="author">Posted By {author}</p>
-          <p class="date">{new Date(created_at).toUTCString()}</p>
-          <p class="body">{body}</p>
+          <p className="title">{title}</p>
+          <p className="author">Posted By {author}</p>
+          <p className="date">{new Date(created_at).toUTCString()}</p>
+          <p className="body">{body}</p>
         </div>
         <div id="commentsContainer">
           {this.state.user ? (
